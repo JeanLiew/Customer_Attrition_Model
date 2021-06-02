@@ -11,7 +11,7 @@ external_stylesheets = [dbc.themes.GRID, dbc.themes.BOOTSTRAP]
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 app.title = 'Customer Attrition Dashboard - Jean Liew'
-df = pd.read_csv('../data/telco_clustered_dash.csv')
+df = pd.read_csv('file/telco_clustered_dash.csv')
 df.sort_values('customer_id', inplace=True)
 
 #title
@@ -37,9 +37,9 @@ navbar = dbc.Navbar(
         ], style={'width':'100%'}, align='center'), light=True, sticky='top')
 
 #users image
-image_card = html.Div([dbc.CardImg(src="/assets/user_image.jpg", top=True, 
-                                   style={"width": "10rem", "margin":'auto','border-style':'outset','border-radius':'50%'},
-                                   className='my-5')], style={'border':'hidden'}, id='user-image')
+image_card = html.Div([html.Img(src="/assets/user_image_ok.jpg", 
+                                   style={"width": "15rem", "margin":'auto','border-style':'outset','border-radius':'50%'},
+                                   className='my-5', id='image_card')], style={'border':'hidden'}, id='user-image')
 
 #active status
 au_card = dbc.Button("Status", outline=True, color="#fe9d24", active=True, id='status', 
@@ -50,10 +50,10 @@ revenue_card = dbc.Card(dbc.CardBody(html.H6('Total Revenue',id='revenue')), cla
                      style={"width": "100%", 'padding':'10px', 'text-align': 'left','border':'hidden'})
 
 #cluster card
-cluster_card = dbc.Card([html.H4('', id='cluster', className='mt-2 ml-2'),
+cluster_card = dbc.Card([html.H2('', id='cluster', className='mt-2 ml-2'),
                          dbc.CardBody(html.H6('',id='cluster_description'))], 
                         className="my-2", 
-                        style={"width": "100%", 'padding':'10px', 'text-align': 'left','border':'hidden', 'height': '190px'},id='clus-card')
+                        style={"width": "100%", 'padding':'10px', 'text-align': 'left','border':'hidden', 'height': '195px', 'color': '#fffafa'},id='clus-card')
 
 
 #input cust ID
@@ -74,16 +74,16 @@ cltv_card = dbc.Card([html.H4('Customer Lifetime Value (CLTV)'),
 mon_to_churn = html.Div(dbc.Progress([dbc.Progress(value=100, color="success", bar=True, id='progress'),
                                          dbc.Progress(value=0, color="danger", bar=True, id='countdown')], multi=True))
 
-churn_card = dbc.Card([html.H5('Months to Churn', id='months_to_churn'),
+churn_card = dbc.Card([html.H6('Months to Churn', id='months_to_churn'),
                        dbc.CardBody(mon_to_churn)
                       ], 
                       style={"width": "100%", 'text-align': 'left','border':'hidden', 'background': 'none'})
     
 #churn risk
-churn_risk_card = dbc.Card([html.H4('', id='churn_score', className='mt-2 ml-2'),
+churn_risk_card = dbc.Card([html.H2('', id='churn_score', className='mt-2 ml-2'),
                             dbc.CardBody(churn_card)],
                            className="my-2", 
-                           style={"width": "100%", 'padding':'10px', 'text-align': 'left','border':'hidden'},
+                           style={"width": "100%", 'padding':'8px', 'text-align': 'left','border':'hidden'},
                            id='churn-card')
 
 
@@ -172,6 +172,9 @@ info_div = html.Div(
     ]
 )
 
+
+footer = html.Footer('Dashboard by Jean Liew, 2021', style={'font-size':'0.8em'}, id='footer-style')
+
 right_div = html.Div(
     [
         dbc.Row([dbc.Col(cltv_card, width=12)]),
@@ -190,10 +193,12 @@ left_div = html.Div(
     ]
 )
 
+
 app.layout = html.Div(
     [
         navbar,
         dbc.Row([dbc.Col(left_div, width=3, id='sidebar'), dbc.Col(right_div, width=9, style={'padding':'30px'})], style={'margin':'0px'}),
+        footer
     ]
 )
 
@@ -274,19 +279,20 @@ def update_progress(customer_id):
     
 #callback button
 @app.callback([Output(component_id='status', component_property='children'),
-               Output(component_id='status', component_property='color')],
+               Output(component_id='status', component_property='color'),
+              Output(component_id='image_card', component_property='src')],
               Input(component_id='cust_id_input', component_property='value')
 )
 def update_button(customer_id):
     if customer_id:
         result = df[df.customer_id==customer_id].customer_status
         result = result.values[0] # 1 or 0
-        if result == 0: #active (a,d) churn (a,d)
-            return ['Active','success']
+        if result == 0:
+            return ['Active','success','/assets/user_image_happy.jpg']
         else:
-            return ['Churned', 'danger' ]
+            return ['Churned', 'danger','/assets/user_image_cry.jpg' ]
     else:
-        return ['Status', 'warning']
+        return ['Status', 'warning','/assets/user_image_default.jpg']
 
 #callback table
 @app.callback(
@@ -309,7 +315,7 @@ def update_table(customer_id):
         result['married'] = result['married'].apply(lambda x: 'Married' if x == 1 else 'Single')
         return list(result.values[0])
     else:
-        return ['\n'] * 8
+        return [' '] * 8
 
 #callback clus description
 @app.callback(
@@ -319,10 +325,10 @@ def update_table(customer_id):
 def update_clus_description(cluster):
     if cluster != 'Customer Segmentation':
         description_dict = {
-            'Vanilla':'Basic users that are tech savvy consumers with high data consumption and keen on online security.',
-            'Heavyweight':'They are users with high revenue with high CLTV profiles. Users are loyalist with long tenure months.',
-            'Minimalist': 'Low commitment users with no strings attached. They are users with the lowest revenue profile yet the easiest to satisfy.',
-            'Price Sensitive' : 'They are users with lowest CLTV profile. Users are keen but not confident enough to extend longer tenure months. These users are price-loyalist. They are most likely to seek for better offer with lower price tag.',
+            'Vanilla':'Basic users that are tech savvy users with high data consumption and keen on online security. They only subsribed to selective services.',
+            'Heavyweight':'They are users with high revenue with high CLTV profiles. Users are loyalist with long tenure months. They are engaged with most of our products.',
+            'Minimalist': 'Low commitment users with no strings attached. They are users with the lowest revenue profile yet the easiest to satisfy. They are keen on bare minimum subsription.',
+            'Price Sensitive' : 'They are users with lowest CLTV profile. Users are keen but not confident enough to extend for longer tenure months. These users are price-conscious.',
         }
         return description_dict.get(cluster)
     else:

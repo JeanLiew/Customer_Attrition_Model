@@ -92,13 +92,12 @@ background-color: #fc5e71;
 }
 
 .property-row {
-    padding :10px 3%;
+    padding :15px 3%;
     align-items : center;
     
 }
 
 .property-row img {
-/*     width: 70%; */
     height: 30px;
     margin-right: 10px;
     
@@ -112,5 +111,14 @@ background-color: #fc5e71;
 
 .property-row .property-value {
     font-size: 1.3em;
-    color: #fff;
+    color: #dcdcdc;
+}
+
+#footer-style {
+    bottom : 0px;
+    right: 0px;
+    left: 0px;
+    padding : 5px;
+    background : #f5fffa;
+    text-align : center;
 }
