@@ -1,0 +1,124 @@
+li {
+    width: 100%;
+}
+
+body {
+    color: #384053;
+
+}
+
+#sidebar{
+    background: #2c43a9;
+    color: white;
+
+} 
+
+#cust_id_input {
+    margin-left: -15px;
+    width: calc(100% + 30px);
+    border-radius: 0;
+}
+#cust_id_input .Select-multi-value-wrapper {
+    padding-left: 15px;
+}
+
+#cust_id_input .Select-control {
+    border-radius: 0px;
+    border: hidden;
+}
+
+#user-image {
+    text-align: center;
+}
+
+#cltv-container{
+    display : flex;
+    align-items: flex-end;
+    
+}
+
+#cltv {
+    color: black;
+    font-size: 4.5rem;
+    font-weight: bold;
+    margin-right: 20px;
+    line-height:0.9;
+}
+
+#revenue {
+    background: #84bccb;
+    color: white;
+    padding: 8px 10px;
+    border-radius: 5px;
+}
+
+#churn-card {
+    background-color : #666edc;
+    border-radius: 10px;
+    color: white;
+}
+
+#clus-card {
+    background-color : #84bccb;
+    border-radius: 10px;
+    color: white;
+}
+
+.btn-outline-warning:not(:disabled):not(.disabled).active, .btn-outline-warning:not(:disabled):not(.disabled):active, .show>.btn-outline-warning.dropdown-toggle {
+color: #212529;
+background-color: #fe9d24;
+border-color: #fe9d24;
+}
+
+#churn-card #progress.bg-danger {
+color: #fff;
+background-color: #fe5e71 !important;
+border-color: #fe5e71 !important;
+}
+
+#status {
+    display : flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg-danger {
+background-color: #fc5e71;
+}
+
+#progress {
+    width: 100%;
+    background-color: #fe9d24;
+}
+
+.property-row {
+    padding :15px 3%;
+    align-items : center;
+    
+}
+
+.property-row img {
+    height: 30px;
+    margin-right: 10px;
+    
+}
+
+.property-row .property-name {
+    font-size : 0.9em;
+    line-height: 1;
+    color: #aaa;
+}
+
+.property-row .property-value {
+    font-size: 1.3em;
+    color: #dcdcdc;
+}
+
+#footer-style {
+    bottom : 0px;
+    right: 0px;
+    left: 0px;
+    padding : 5px;
+    background : #f5fffa;
+    text-align : center;
+}
