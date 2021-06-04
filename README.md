@@ -14,7 +14,7 @@ Churn rate is expressed as a rate that indicates the number of customers lost ov
 
 ## Executive Summary  
 
-Aligned with the general marketing strategy, the first step to customer-driven business is to understand our customer base. Our customer behaviour also known as customer segmentation aids to provide a strong value proposition. Using analytics, the customer database are segmented into 4 clusters, namely **Vanilla**, **Heavyweight**, **Minimalist** and **Price-Sensitive**. 
+Aligned with the general marketing strategy, the first step to customer-driven business is to understand our customer base. Customer behaviour clustering also known as customer segmentation aids to provide a strong value proposition. Using analytics, the customer database are segmented into 4 clusters, namely **Vanilla**, **Heavyweight**, **Minimalist** and **Price-Sensitive**. 
 
 With the cluster identified, we will process this as part of the classification model to learn what other features affecting the customer churn for instance, married users are 1.51 times more likely to churn, whereas contract users of two years are 0.43 times more likely to stay. 
 
