@@ -7,7 +7,7 @@
 
 With spewing yet saturated competitions in the telecommunication industry, in order to stay ahead in the competition, customer satisfaction should always a the business driver with customer attrition as a goal.
 
-Customer Attrition is also known as customer churn where customer ends the commercial relationship with the business. Customer lifetime value (CLTV) an important key metric to measure the health of business. Since change is inevitable the business goal is to reduce custome churn.
+Customer Attrition is also known as customer churn where customer ends the commercial relationship with the business. Customer lifetime value (CLTV) an important key metric to measure the health of business. Since change is inevitable, the business's main goal is to increase customer retention.
 
 Churn rate is expressed as a rate that indicates the number of customers lost over a given period of time. With the cost of acquisition often greater than customer retention [(Customer Retention Strategy, 2016)](https://blog.exitbee.com/8-simple-customer-retention-strategies-to-decrease-your-churn-rate/), being able to identify why and when a customer is leaving, allows business to take on proactive approach to win the customer back. 
 
