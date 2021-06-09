@@ -327,10 +327,10 @@ def update_table(customer_id):
 def update_clus_description(cluster):
     if cluster != 'Customer Segmentation':
         description_dict = {
-            'Vanilla':'Basic users that are tech savvy users with high data consumption and keen on online security. They only subsribed to selective services.',
+            'Vanilla':'Basic users that are tech savvy with high data consumption and keen on online security. They are only subscribed to selective value-added services.',
             'Heavyweight':'They are users with high revenue with high CLTV profiles. Users are loyalist with long tenure months. They are engaged with most of our products.',
-            'Minimalist': 'Low commitment users with no strings attached. They are users with the lowest revenue profile yet the easiest to satisfy. They are keen on bare minimum subsription.',
-            'Price Sensitive' : 'They are users with lowest CLTV profile. Users are keen but not confident enough to extend for longer tenure months. These users are price-conscious.',
+            'Minimalist': 'Low commitment users with no strings attached. They are users with the lowest revenue profile yet the easiest to satisfy. They are engaged on bare minimum products.',
+            'Price Sensitive' : 'They are users with lowest CLTV profile. Users are keen but not confident enough to extend for longer tenure months. These users are price-conscious and prone to other offers.',
         }
         return description_dict.get(cluster)
     else:

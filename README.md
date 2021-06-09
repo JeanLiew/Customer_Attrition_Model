@@ -5,7 +5,7 @@
 
 > There is a big difference between a satisfied customer and a loyal customer - Shep Hyken
 
-With spewing yet saturated competitions in the telecommunication industry, in order to stay ahead in the competition, customer satisfaction should always a the business driver with customer attrition as a goal.
+With spewing yet saturated competitions in the telecommunication industry, in order to stay ahead in the competition, customer satisfaction should always the heart of the business model with customer attrition as long-term strategy.
 
 Customer Attrition is also known as customer churn where customer ends the commercial relationship with the business. Customer lifetime value (CLTV) an important key metric to measure the health of business. Since change is inevitable the business goal is to reduce custome churn.
 
@@ -14,7 +14,7 @@ Churn rate is expressed as a rate that indicates the number of customers lost ov
 
 ## Executive Summary  
 
-Aligned with the general marketing strategy, the first step to customer-driven business is to understand our customer base. Our customer behaviour also known as customer segmentation aids to provide a strong value proposition. Using analytics, the customer database are segmented into 4 clusters, namely **Vanilla**, **Heavyweight**, **Minimalist** and **Price-Sensitive**. 
+Aligned with the general marketing strategy, the first step to customer-driven business is to understand our customer base. Customer behaviour also known as customer segmentation aids to provide a strong value proposition. Using analytics, the customer database are segmented into 4 clusters, namely **Vanilla**, **Heavyweight**, **Minimalist** and **Price-Sensitive**. 
 
 With the cluster identified, we will process this as part of the classification model to learn what other features affecting the customer churn for instance, married users are 1.51 times more likely to churn, whereas contract users of two years are 0.43 times more likely to stay. 
 
@@ -23,7 +23,7 @@ In summary, internet_service using fiber optic, payment method using electronic 
 As a direct call to action, the customers has been identified in simpler fashion for marketing / management's action. The below are namely the customer quadrant that allows a relatively simple decision making on its retention plans.
 ![Customer Quadrant](/images/cluster_quadrant.png)
 
-Finally, as recommendation, such model of customer attrition is able to be further developed for different business models. With modification on the features and especially on the customer segmentation, the model will be able to predict for business customer churn anticiptation. 
+Finally, as recommendation, such model of customer attrition is able to be further developed for different business models. With modification on the features and especially on the customer segmentation, the model will be able to predict for business customer churn anticipation. 
 
 ### Data Dictionary
 
@@ -84,10 +84,11 @@ As customer churn in the database is only 23% , the datasets are deemed imbalanc
 
 With Random Forest we have achieved 69% F1 Score with 73% AUC. This means that our model will be able to distinguish the churn customers and those who stayed, 73% of the time. However, being able to predict churn customer from historical data is biased and lagging, which is why we have also made additional prediction that would be necessary to quantify expected churn period. 
 
- From 5174 customer that has yet to churn, our Random Forest model has manage to find relationship with 94% accuracy predicting the customer base with high churn tendency. 
-
-![Survival Curve](/images/surv_kmf_cohort.png)
+From 5174 customer that has yet to churn, our Random Forest model has manage to find relationship with 94% accuracy predicting the customer base with high churn tendency. 
 
 The model has its fair share of limitations. As we do not have time-series features, the model itself is not able to confirm its performance in predicting future churn class. Hence, the survival analysis using Lifelines is used to measure the accuracy in the model expected performance.
 
-For more visualisation of the project, you can find more information in the dashboard with link as follow.
+For more visualisation of the project, you can find more information in the dashboard with link as follow :
+
+[Customer Attrition Dashboard](https://customer-attrition-dashboard.herokuapp.com)
+
