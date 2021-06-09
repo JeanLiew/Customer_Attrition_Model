@@ -7,18 +7,14 @@
 
 With spewing yet saturated competitions in the telecommunication industry, in order to stay ahead in the competition, customer satisfaction should always the heart of the business model with customer attrition as long-term strategy.
 
-Customer Attrition is also known as customer churn where customer ends the commercial relationship with the business. Customer lifetime value (CLTV) an important key metric to measure the health of business. Since change is inevitable, the business's main goal is to increase customer retention.
+Customer Attrition is also known as customer churn where customer ends the commercial relationship with the business. Customer lifetime value (CLTV) an important key metric to measure the health of business. Since change is inevitable the business goal is to reduce custome churn.
 
 Churn rate is expressed as a rate that indicates the number of customers lost over a given period of time. With the cost of acquisition often greater than customer retention [(Customer Retention Strategy, 2016)](https://blog.exitbee.com/8-simple-customer-retention-strategies-to-decrease-your-churn-rate/), being able to identify why and when a customer is leaving, allows business to take on proactive approach to win the customer back. 
 
 
 ## Executive Summary  
 
-<<<<<<< HEAD
 Aligned with the general marketing strategy, the first step to customer-driven business is to understand our customer base. Customer behaviour also known as customer segmentation aids to provide a strong value proposition. Using analytics, the customer database are segmented into 4 clusters, namely **Vanilla**, **Heavyweight**, **Minimalist** and **Price-Sensitive**. 
-=======
-Aligned with the general marketing strategy, the first step to customer-driven business is to understand our customer base. Customer behaviour clustering also known as customer segmentation aids to provide a strong value proposition. Using analytics, the customer database are segmented into 4 clusters, namely **Vanilla**, **Heavyweight**, **Minimalist** and **Price-Sensitive**. 
->>>>>>> 332d68f8db9ee29ad79726ee76e5c67ceb71627e
 
 With the cluster identified, we will process this as part of the classification model to learn what other features affecting the customer churn for instance, married users are 1.51 times more likely to churn, whereas contract users of two years are 0.43 times more likely to stay. 
 
